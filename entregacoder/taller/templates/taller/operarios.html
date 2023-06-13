@@ -1,0 +1,20 @@
+{% extends 'taller/base.html' %}
+
+{% load static %}
+
+{% block title %} Operarios {% endblock title %}
+
+{% block main %}
+<br/><br/><br/><br/>
+<li>-->Apellido, Nombre|| Legajo || asignado a lider </li>
+<br/>
+<body>
+    {% for operario in Operarios %}
+    <li>{{operario}}</li>
+    {% endfor %}
+    <br/><br/>
+    <a class="btn btn-primary" href="{%url 'NuevoOperario'%}" role="button">Agragar Nuevo</a>
+    <a class="btn btn-primary" href="{%url 'BuscaOperario'%}" role="button">Buscar</a><br/>
+</body>
+<br/><br/><br/><br/><br/>
+{% endblock main %}

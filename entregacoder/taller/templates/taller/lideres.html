@@ -1,0 +1,19 @@
+{% extends 'taller/base.html' %}
+
+{% load static %}
+
+{% block title %} Líderes {% endblock title %}
+
+{% block main %}
+<br/><br/><br/><br/><br/>
+<li>Nombre || legajo || </li>
+<br/>
+<body>
+    {% for lider  in Lideres %}
+    <li>{{lider}}</li>
+    {% endfor %}
+    <br/><br/>
+    <a class="btn btn-primary" href="{%url 'NuevoLider'%}" role="button">Agregar Nuevo</a>
+</body>
+<br/><br/><br/><br/><br/>
+    {% endblock main %}

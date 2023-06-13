@@ -1,0 +1,20 @@
+{% extends 'taller/base.html' %}
+
+{% load static %}
+
+{% block title %} Herramientas {% endblock title %}
+
+{% block main %}
+<br/><br/><br/><br/><br/>
+<li>Nombre || Rastreo || operario asignado --> fecha de calibrado </li>
+<br/>
+<body>
+    {% for herramienta in Herramientas %}
+    <li>{{herramienta}}</li>
+    {% endfor %}
+    <br/><br/>
+    <a class="btn btn-primary" href="{%url 'Formulario'%}" role="button">Agregar Nueva herramienta</a>
+</body>
+<br/><br/><br/><br/><br/>
+
+{% endblock main %}

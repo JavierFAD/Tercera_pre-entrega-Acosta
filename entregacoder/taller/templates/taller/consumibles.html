@@ -1,0 +1,17 @@
+{% extends 'taller/base.html' %}
+
+{% load static %}
+
+{% block title %} Consumibles {% endblock title %}
+
+{% block main %}
+<br/><br/><br/><br/><br/>
+<li>Nombre de consumible ------> cantidad del producto </li>
+<br/>
+<body>
+    {% for consumible in Consumibles %}
+    <li>{{consumible}}</li>
+    {% endfor %}
+</body>
+<br/><br/><br/><br/><br/>
+    {% endblock main %}

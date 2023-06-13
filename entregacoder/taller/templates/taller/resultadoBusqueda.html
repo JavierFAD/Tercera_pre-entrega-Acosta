@@ -1,0 +1,22 @@
+{% extends 'taller/base.html' %}
+
+{% load static %}
+
+{% block title %} Resultado {% endblock title %}
+
+{% block main %}
+<br/><br/><br/><br/><br/><br/><br/><br/>
+
+
+    <body>
+    {% for operario in operarios %}
+    <p>Apellido: {{ operario.apellido }} Nombre:{{operario.nombre}}</p>
+    <p>Legajo: {{ operario.legajo }}</p>
+    <p>Lider a cargo: {{ operario.lider }}</p>
+    <p>Funcion: {{ operario.funcion }}</p>
+    {% endfor %}
+    </body>
+
+<br/><br/><br/><br/><br/>
+
+{% endblock main %}

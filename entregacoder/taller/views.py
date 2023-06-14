@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Herramienta, Operario, Lider, Consumible
-from .forms import FormularioHerramienta, BuscaOperario, FormularioLider, FormularioOperario
+from .forms import FormularioHerramienta, BuscaOperario, FormularioLider, FormularioOperario, FormularioConsumible
 
 def inicio(request):
     return render(request, "taller/index.html")
@@ -56,19 +56,6 @@ def herramientasFormulario(request):
     return render(request, "taller/herramientaFormulario.html",{"miFormulario": miFormulario})
 
 
-
-# def buscaOperario(request):
-#     if request.method == "POST":
-#         miFormulario = BuscaOperario(request.POST)
-#         if miFormulario.is_valid():
-#             informacion = miFormulario.cleaned_data
-#             nombre = Operario.objects.filter(nombre__icontains=informacion["nombre"])
-#             return render(request, "taller/resultadoBusqueda.html", {"nombre":nombre})
-#     else:
-#             miFormulario = BuscaOperario()
-#     return render(request, "taller/BuscaOperario.html", {"miFormulario": miFormulario})
-
-
 def liderFormulario(request):
     
     if request.method =='POST':
@@ -95,6 +82,20 @@ def operarioFormulario(request):
     else:
         miFormulario = FormularioOperario()
     return render(request, "taller/OperarioFormulario.html",{"miFormulario": miFormulario})
+
+
+def consumibleForm(request):
+    
+    if request.method =='POST':
+        miFormulario = FormularioConsumible(request.POST)
+        if miFormulario.is_valid():
+            informacion = miFormulario.cleaned_data
+            consumible = Consumible(nombre=informacion['nombre'], descripcion=informacion['descripcion'], cantidad=informacion['cantidad'], unidad=informacion['unidad'])
+            consumible.save()
+            return render(request, "taller/index.html")
+    else:
+        miFormulario = FormularioConsumible()
+    return render(request, "taller/consumiblesFormulario.html",{"miFormulario": miFormulario})
 
 
 def buscar(request):

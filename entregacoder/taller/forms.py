@@ -23,3 +23,9 @@ class FormularioOperario(forms.Form):
     lider       = forms.CharField(max_length=50)
     funcion     = forms.CharField(max_length=200)
     descripcion = forms.CharField(max_length=200)
+
+class FormularioConsumible(forms.Form):
+    nombre      = forms.CharField(max_length=50)
+    descripcion = forms.CharField(max_length=50)
+    cantidad      = forms.IntegerField()
+    unidad      = forms.CharField(max_length=10)

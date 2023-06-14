@@ -12,5 +12,6 @@ urlpatterns = [
     path('liderForm/', views.liderFormulario, name='NuevoLider' ),
     path('OperarioForm/', views.operarioFormulario, name='NuevoOperario' ),
     path('buscaOperario/', views.buscar, name="BuscaOperario"),
+    path('consumibleForm/', views.consumibleForm, name="NuevoConsumible"),
 
 ]

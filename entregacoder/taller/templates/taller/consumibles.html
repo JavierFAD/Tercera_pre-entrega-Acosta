@@ -12,6 +12,8 @@
     {% for consumible in Consumibles %}
     <li>{{consumible}}</li>
     {% endfor %}
+    <br/><br/>
+    <a class="btn btn-primary" href="{%url 'NuevoConsumible'%}" role="button">Agregar Nuevo Consumible</a>
 </body>
 <br/><br/><br/><br/><br/>
     {% endblock main %}
